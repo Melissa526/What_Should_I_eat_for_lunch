@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/Melissa526/What_Should_I_eat_for_lunch.git"
   },
-  "author": "JISOO HAN",
+  "author": "JISOO HAN <jisoo.han@vtw.co.kr> (https://github.com/Melissa526)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Melissa526/What_Should_I_eat_for_lunch/issues"
@@ -22,5 +22,12 @@
     "body-parser": "^1.19.0",
     "ejs": "^3.0.2",
     "express": "^4.17.1"
-  }
+  }, 
+  "keywords": [
+    "xhr", 
+    "http",
+    "ajax",
+    "promise",
+    "node"
+  ] 
 }
