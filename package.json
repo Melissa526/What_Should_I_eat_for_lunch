@@ -1,0 +1,26 @@
+{
+  "name": "wtslunch",
+  "version": "1.0.0",
+  "description": "직장인의 최대고민 오점뭐(오늘점심뭐먹지)에 대한 고민에 선택지를 제공하는 웹사이트",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "pm2 start app.js --name wtslun",
+    "stop": "pm2 stop wtslun"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Melissa526/What_Should_I_eat_for_lunch.git"
+  },
+  "author": "JISOO HAN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Melissa526/What_Should_I_eat_for_lunch/issues"
+  },
+  "homepage": "https://github.com/Melissa526/What_Should_I_eat_for_lunch#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1"
+  }
+}
