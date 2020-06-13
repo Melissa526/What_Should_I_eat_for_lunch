@@ -13,3 +13,10 @@ First of all To run the app, setup node modules by npm typing following commands
 npm install
 npm start
 ```
+
+
+
+
+
+
+
