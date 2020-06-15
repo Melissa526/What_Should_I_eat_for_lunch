@@ -1,0 +1,117 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*****************
+      Nav.js
+*****************/
+.mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #555;
+    height: 500px;
+    color: white;
+    border-radius: 10px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+}
+
+.topnav #myLinks {
+    display: none;
+}
+
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    background-color: #333333;
+    padding: 10px;
+}
+
+.topnav a.icon {
+    width: 25px;
+    height: auto;
+    background: #2ac1bc;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding : 10px 20px 7px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    background-color: #2ac1bc !important;
+    color: white;
+    font-size: 28px !important;
+    font-weight: bolder;
+}
+.active:hover{ color: white; cursor: pointer; }
+
+/*****************
+     Main.js
+*****************/
+.main_area{ height : 910px; }
+.main_area .main_item_wrapper {
+    width: 20%;
+    height: auto;
+    min-height: 900px;
+    display: inline-block;
+    position:relative;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+    background-color: rgba(42, 193, 188, 0.2);
+}
+
+.main_area .main_item_wrapper img {
+    width: 100%;
+    position:relative;
+    z-index:1;
+}
+
+.darkness {
+    position:absolute;
+    top:0;
+    left:0;
+    width:inherit;
+    height:inherit;
+    background:#000000;
+    opacity:0;
+    transition:all .6s linear;
+}
+
+
+.btn-plus {
+    position:absolute;
+    top:46%;
+    left:40%;
+    background:red;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    text-align:center;
+}
+
+
+.btn-plus span {
+    font-size:2.3em;
+    color:#ffffff;
+    user-select:none;
+}
+.img-wrapper:hover .darkness{
+    opacity:0.4;
+}
+
+.img-wrapper:hover .btn-plus {
+    opacity:1;
+    transform:scale(1);
+    cursor: pointer;
+}
