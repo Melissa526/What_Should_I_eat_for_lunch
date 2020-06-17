@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Nav extends Component {
 
-    toggleNav() {
+    toggleNav(){
         var x = document.getElementById("myLinks");
         if (x.style.display === "block") {
             x.style.display = "none";
@@ -28,7 +28,6 @@ class Nav extends Component {
                    <a href="#about">About</a>
                </div>
                <a href="javascript:void(0);" className="icon" onClick={this.toggleNav}>
-
                    <FontAwesomeIcon icon={faBars} size="2x"/>
                </a>
            </div>
