@@ -8,9 +8,9 @@ class Main extends Component{
 
         return(
             <div className="wrapper" >
-                <div className="window_container" id="window1"></div>
-                <div className="window_container" id="window2"></div>
-                <div className="window_container" id="window3"></div>
+                <div className="window_container" id="window1">화면 5분할 영역</div>
+                <div className="window_container" id="window2">메뉴 추천순위 영역</div>
+                <div className="window_container" id="window3">이용자 후기 영역</div>
             </div>
         );
     }
