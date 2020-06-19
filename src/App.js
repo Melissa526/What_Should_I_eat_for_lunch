@@ -1,17 +1,12 @@
 import React from 'react';
+
+import Route from './routes/Route';
 import './App.css';
 
-import Nav from './components/Nav';
-import Main from './components/Main';
-
-function App() {
-
-    return (
+const App = () => (
     <div className="App">
-      <Nav/>
-      <Main/>
+        <Route/>
     </div>
-  );
-}
+);
 
 export default App;
