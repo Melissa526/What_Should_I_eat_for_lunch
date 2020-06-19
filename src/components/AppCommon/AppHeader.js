@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
 
-import './style/main.css';
+import '../style/main.css';
 import { fas, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-class Nav extends Component {
+class AppHeader extends Component {
 
     toggleNav(){
         var x = document.getElementById("myLinks");
@@ -24,9 +24,10 @@ class Nav extends Component {
            <div className="topnav">
                <Link to="/" className="active">오점뭐?</Link>
                <div id="myLinks">
-                   <Link to="/home">메뉴판</Link>
-                   <Link to="/board">게시판</Link>
+                   <Link to="/menu">메뉴선택</Link>
                    <Link to="/map">주변탐색</Link>
+                   <Link to="/board">게시판</Link>
+                   <Link to="/contact">CONTACT US</Link>
                </div>
                <a className="icon" onClick={this.toggleNav}>
                    <FontAwesomeIcon icon={faBars} size="2x"/>
@@ -36,4 +37,4 @@ class Nav extends Component {
    }
 }
 
-export default Nav;
+export default AppHeader;

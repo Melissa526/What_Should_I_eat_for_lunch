@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class MnuRecomm extends Component{
+class MenuRank extends Component{
     render() {
         return(
             <div className="wrapper">
@@ -10,4 +10,4 @@ class MnuRecomm extends Component{
     }
 }
 
-export default MnuRecomm;
+export default MenuRank;
