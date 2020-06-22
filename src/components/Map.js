@@ -1,35 +1,52 @@
 /*global kakao*/
 import React, {Component} from 'react';
+import '../style/map.css';
 
 class Map extends Component {
 
-    componentDidMount() {
-        const api = document.createElement('script');
-        api.type = 'text/javascript';
-        api.async = true;
-        api.src = 'https://dapi.kakao.com/v2/maps/sdk.js?appkey=34b5b027cd5adc029f043051ec0c4c58&autoload=false';
-
-        document.head.appendChild(api);
-
-        api.onload = () => {
-            kakao.maps.load(()=>{
-                var container = document.getElementById('map');
-                var options = {
-                    center : new kakao.maps.LatLng(33.450701, 126.570667),
-                    level : 3
-                };
-                var map = new window.kakao.maps.Map(container, options);
-            });
+    constructor(props){
+        super(props);
+        this.state = {
+            map : null
         }
+
+        this.zoomIn = this.zoomIn.bind();
+        this.zoomOut = this.zoomOut.bind();
+    }
+
+    componentDidMount() {
+        var container = document.getElementById('map'),
+            options = {
+                center : new window.kakao.maps.LatLng(33.450701, 126.570667),
+                level : 3
+            };
+        this.map =  new window.kakao.maps.Map(container, options);
+    }
+
+    zoomIn(){
+        map.setLevel(map.getLevel()-1);
+    }
+
+    zoomOut(){
+        map.setLevel(map.getLevel()+1);
     }
 
     render() {
 
-        const mapStyle={ width : '100%', height : '100vh'}
-
         return (
-            <div className="wrapper">
-                <div className="map_wrapper" id="map" style={mapStyle}></div>
+            <div className="map_wrapper">
+                {/* 지도 출력 영역*/}
+                <div className="map" id="map"></div>
+
+                {/* 지도 확대,축소 컨트롤박스 */}
+                <div className="custom_zoomcontrol radius_border">
+                    <span onClick={this.zoomIn}>
+                        <img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대" />
+                    </span>
+                    <span onClick={this.zoomOut}>
+                        <img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소" />
+                    </span>
+                </div>
             </div>
         );
     }
