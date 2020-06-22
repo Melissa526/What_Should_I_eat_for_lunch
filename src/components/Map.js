@@ -35,7 +35,8 @@ class Map extends Component {
         var map =  new kakao.maps.Map(container, options);                  //지도 생성
 
         var marker = new kakao.maps.Marker({
-            position :  new kakao.maps.LatLng(33.450701, 126.570667)
+            position :  new kakao.maps.LatLng(33.450701, 126.570667),
+            clickable: true
         })
         marker.setMap(map);                                                 //default 마커 생성
 
@@ -59,11 +60,23 @@ class Map extends Component {
             map.setCenter(locPosition);
         }
 
+        //마커 위에 인포윈도우 생성
+        //TODO 리팩토링 필요
+        var iwContent = `<div className='marker_infowindow'>Hello World!</div>`,
+            iwRemoveable = true;
+        var infoWindow = new kakao.maps.InfoWindow({
+            content : iwContent,
+            removable : iwRemoveable
+        });
+
+        kakao.maps.event.addListener(marker, 'click', ()=>{
+            infoWindow.open(map, marker);
+        });
+
         this.setNewMarker(map, marker);
         this.zoomIn(map);
         this.zoomOut(map);
     }
-
 
     setNewMarker(map, marker) {
         kakao.maps.event.addListener(map, 'click', (mouseEvent) => {
@@ -100,7 +113,8 @@ class Map extends Component {
 
                 {/* 검색창 [s] */}
                 <div className="map_search_wrapper">
-                    <div className="search_box">                        {/* 검색필드 영역 */}
+                    <div className="search_box">
+                        {/* 검색필드 영역 */}
                         <button type="button" className="btn_search ng-star-inserted">검색</button>
                         <div className="input_box">
                             <input type="text" className="input_search ng-pristine ng-valid ng-touched"

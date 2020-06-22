@@ -1,6 +1,17 @@
 /*******************
 *       Map.js
 ********************/
+button, input, label, select, textarea {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+}
+
 .App{ overflow: hidden !important; }
 .map_wrapper {
     position: relative;
@@ -40,4 +51,46 @@
     background-color: #fff;
     background-clip: padding-box;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+}
+
+.search_box {
+    display: flex;
+    position: relative;
+    height: 45px;
+    padding: 0 8px 0 17px;
+    box-sizing: border-box;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.btn_search {
+    background-image : url('/img/magnifyingGlass_icon.png');
+    overflow: hidden;
+    display: inline-block;
+    width: 25px;
+    height: 24px;
+    font-size: 0;
+    color: transparent;
+    vertical-align: top;
+    background-position: -27px -112px;
+    flex-shrink: 0;
+    margin-right: 7px;
+}
+
+.input_box{ display: inline-block; width:100%; }
+.input_search{
+    position: relative;
+    width: 100%;
+    color: #333;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -.4px;
+    caret-color: #1ec545;
+    box-sizing: border-box;
+    z-index: 10; outline: none;
+}
+
+.marker_infowindow {
+    border : 1px solid #ccc;
+    padding : 5px;
 }
