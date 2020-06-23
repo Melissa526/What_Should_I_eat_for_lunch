@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import '../style/main.css';
-import MenuChoice from "./MenuChoice";
+import MenuChoice from "./FoodMenu/MenuChoice";
 
 class Home extends Component{
 

@@ -19,7 +19,7 @@ button, input, label, select, textarea {
     width: 100%; height: 100vh;
 }
 .map_wrapper .map {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -60,11 +60,10 @@ button, input, label, select, textarea {
     padding: 0 8px 0 17px;
     box-sizing: border-box;
     align-items: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
 }
-
 .btn_search {
-    background-image : url('/img/magnifyingGlass_icon.png');
+    background-image : url('../img/magnifyingGlass_icon.png');
     overflow: hidden;
     display: inline-block;
     width: 25px;
@@ -90,7 +89,23 @@ button, input, label, select, textarea {
     z-index: 10; outline: none;
 }
 
+.search_result{
+    height : 82%;
+    border : 1px solid green;
+}
+
+ul.search_list{
+    height : 100%;
+    width: 100%;
+    list-style: none;
+}
+
+li.search_item{
+    height: 25%;
+    background-color: #f5f5f5;
+}
+
 .marker_infowindow {
-    border : 1px solid #ccc;
+    border : 1px solid #ddd;
     padding : 5px;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import AppHeader from '../components/AppCommon/AppHeader';
-import MenuChoice from '../components/MenuChoice';
+import MenuChoice from '../components/FoodMenu/MenuChoice';
 import board from '../components/Board';
 import Map from '../components/Map/Map';
 import ContactUs from '../components/ContactUs';
