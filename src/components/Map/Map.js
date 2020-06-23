@@ -50,9 +50,8 @@ class Map extends Component {
 
         Kakao.marker.setMap(Kakao.map);                                         //default 마커 생성
 
-
         //지도 초기화 생성
-        this.initMap(Kakao.map, Kakao.marker);
+        this.init(Kakao.map, Kakao.marker);
 
 
         //마커 위에 인포윈도우 생성
@@ -66,8 +65,6 @@ class Map extends Component {
         kakao.maps.event.addListener(Kakao.marker, 'click', ()=>{
             infoWindow.open(Kakao.map, Kakao.marker);
         });
-
-
 
 
         //검색창에 키워드 검색
@@ -123,7 +120,7 @@ class Map extends Component {
     }
 
     //카카오맵 초기화
-    initMap(map, marker) {
+    init(map, marker) {
 
         if (navigator.geolocation) {                     // HTML5의 geolocation으로 사용할 수 있을 때
             //접속위치 수집
@@ -153,7 +150,7 @@ class Map extends Component {
         map.setCenter(locPosition);
     }
 
-       //마커 생성
+    //마커 생성
     displayMarker(map, marker, latlng) {
         marker.setPosition(latlng);
 
@@ -169,7 +166,6 @@ class Map extends Component {
             this.displayMarker(map, marker, mouseEvent.latLng);
         });
     }
-
 
     //검색결과목록 마커 표시
     displayPlaces(map, places){
@@ -205,7 +201,6 @@ class Map extends Component {
         map.setBounds(bounds);
     }
 
-
     //지도 확대
     zoomIn(map) {
         document.getElementById('zoomIn').addEventListener('click', () => {
@@ -213,14 +208,12 @@ class Map extends Component {
         });
     }
 
-
     //지도 축소
     zoomOut(map) {
         document.getElementById('zoomOut').addEventListener('click', () => {
             map.setLevel(map.getLevel() + 1);
         });
     }
-
 
     render() {
         return (
