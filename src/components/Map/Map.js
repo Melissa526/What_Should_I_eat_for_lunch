@@ -22,15 +22,23 @@ import MapControl from './MapControl';
  */
 class Map extends Component {
 
-    constructor(props){
-        super(props);
-        this.state = {
-            map : null,
-            lat : null,
-            lng : null,
-            searchResult : [],
-            markers : []
-        }
+    // constructor(props){
+    //     super(props);
+    //     this.state = {
+    //         map : null,
+    //         lat : null,
+    //         lng : null,
+    //         searchResult : [],
+    //         markers : []
+    //     }
+    // }
+
+    state = {
+        map: null,
+        lat: null,
+        lng: null,
+        searchResult: [],
+        markers: []
     }
 
     componentDidMount() {
