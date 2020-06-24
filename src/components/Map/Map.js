@@ -28,7 +28,7 @@ class Map extends Component {
             map : null,
             lat : null,
             lng : null,
-            searchResult : null,
+            searchResult : [],
             markers : []
         }
     }
@@ -78,13 +78,39 @@ class Map extends Component {
         this.zoomOut(Kakao.map);
     }
 
+    //카카오맵 초기화
+    init(map, marker) {
+
+        if (navigator.geolocation) {                     // HTML5의 geolocation으로 사용할 수 있을 때
+            //접속위치 수집
+            navigator.geolocation.getCurrentPosition((position) => {
+
+                this.setState({
+                    lat : position.coords.latitude,     //위도
+                    lng : position.coords.longitude     //경도
+                });
+
+                this.displayMap(this.state, map, marker);
+            })
+        } else {
+
+            this.setState({
+                lat: 37.55593912727525,
+                lon: 126.97353989504036
+            });
+            this.displayMap(this.state, map, marker);
+        }
+    }
+
+
+    //키워드 검색
     searchPlaces(searchInput, map, places) {
 
         searchInput.addEventListener('keyup', (e) => {
 
             if (e.keyCode === 13) {
-
                 let keyWord = searchInput.value;
+
                 if (!keyWord.replace(/^\s+|\s+$/g, '')) {
                     alert('키워드를 입력해주세요!');
                     return false;
@@ -93,18 +119,23 @@ class Map extends Component {
                 var placeSearchCallback = (data, status, pagination) => {
 
                     if (status === kakao.maps.services.Status.OK) {
+
                         console.log(data);
                         this.setState({
-                            searchResult : JSON.stringify(data)
+                            searchResult : data
                         });
-
                         this.displayPlaces(map, data);
+
                     } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+
                         alert('검색결과가 존재하지 않습니다');
                         return;
+
                     } else if (status === kakao.maps.services.Status.ERROR) {
+
                         alert('검색 결과 중 오류가 발생했습니다');
                         return;
+
                     }
                 };
 
@@ -119,27 +150,7 @@ class Map extends Component {
         });
     }
 
-    //카카오맵 초기화
-    init(map, marker) {
 
-        if (navigator.geolocation) {                     // HTML5의 geolocation으로 사용할 수 있을 때
-            //접속위치 수집
-            navigator.geolocation.getCurrentPosition((position) => {
-                this.setState({
-                    lat : position.coords.latitude,     //위도
-                    lng : position.coords.longitude     //경도
-                });
-
-                this.displayMap(this.state, map, marker);
-            })
-        } else {
-            this.setState({
-                lat: 37.55593912727525,
-                lon: 126.97353989504036
-            });
-            this.displayMap(this.state, map, marker);
-        }
-    }
 
     // 카카오맵 그리기
     displayMap(state, map, marker) {
@@ -219,7 +230,7 @@ class Map extends Component {
         return (
             <div className="map_wrapper">
                 <div className="map" id="map"></div>    {/* 지도 출력 영역*/}
-                <SearchBox result={this.state.searchResult} />  {/* 검색창 */}
+                <SearchBox data={this.state.searchResult} />  {/* 검색창 */}
                 <MapControl/>                           {/* 지도 확대,축소 컨트롤박스 */}
             </div>
         );

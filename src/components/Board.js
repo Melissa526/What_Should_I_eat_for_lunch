@@ -16,5 +16,4 @@ class board extends  Component{
         );
     }
 }
-
 export default board;

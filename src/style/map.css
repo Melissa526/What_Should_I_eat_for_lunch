@@ -63,7 +63,7 @@ button, input, label, select, textarea {
     border-bottom: 1px solid #ddd;
 }
 .btn_search {
-    background-image : url('../img/magnifyingGlass_icon.png');
+    /*background-image : url();*/
     overflow: hidden;
     display: inline-block;
     width: 25px;
@@ -90,20 +90,35 @@ button, input, label, select, textarea {
 }
 
 .search_result{
-    height : 82%;
-    border : 1px solid green;
+    height: auto;
+    min-height : 82%;
 }
 
 ul.search_list{
     height : 100%;
     width: 100%;
+    padding : 0;
     list-style: none;
+    text-align: left;
+    margin: 0 auto;
 }
 
 li.search_item{
+    width: auto;
     height: 25%;
-    background-color: #f5f5f5;
+    font-size : smaller;
+    line-height: 1.3em;
+    padding-bottom: 3px !important;
+    margin-bottom: 5px;
+    border-bottom: 0.5px solid #ddd;
 }
+li.search_item label.item_category { font-size: smaller; color: #888; }
+li.search_item label.item_opt_tel { font-size: small; color: #888; }
+li.search_item h3 { margin: 4px; }
+li.search_item h3 a { text-decoration: none; color : cornflowerblue; }
+li.search_item h3 a:hover { color : dodgerblue; }
+
+
 
 .marker_infowindow {
     border : 1px solid #ddd;
