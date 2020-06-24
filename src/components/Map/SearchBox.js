@@ -14,7 +14,9 @@ class SearchBox extends Component{
             <div className="map_search_wrapper">
                 <div className="search_box">
                     {/* 검색필드 영역 */}
-                    <button type="button" className="btn_search ng-star-inserted">검색</button>
+                    <button type="button" className="btn_search ng-star-inserted">
+                        <img src="https://images.vexels.com/media/users/3/132068/isolated/preview/f9bb81e576c1a361c61a8c08945b2c48-search-icon-by-vexels.png" />
+                    </button>
                     <div className="input_box">
                         <input type="text" className="input_search" id="input_search" placeholder="장소, 키워드로 검색"/>
                     </div>
@@ -24,13 +26,15 @@ class SearchBox extends Component{
                     <ul className="search_list" id="search_list">
                         {
                             this.props.data.map((data, i)=>{
-                                return (<SearchItemInfo name = {data.place_name}
-                                                        jibunAddr = {data.address_name}
-                                                        roadAddr = {data.road_address_name}
-                                                        phone = {data.phone}
-                                                        url = {data.place_url}
-                                                        category = {data.category_name}
-                                                        key={i} />);
+                                return (
+                                    <SearchItemInfo name = {data.place_name}
+                                                    jibunAddr = {data.address_name}
+                                                    roadAddr = {data.road_address_name}
+                                                    phone = {data.phone}
+                                                    url = {data.place_url}
+                                                    category = {data.category_name}
+                                                    key={i} />
+                                                    );
                         })
                         }
                     </ul>

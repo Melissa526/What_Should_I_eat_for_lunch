@@ -15,14 +15,13 @@ button, input, label, select, textarea {
 .App{ overflow: hidden !important; }
 .map_wrapper {
     position: relative;
-    overflow: hidden;
+    overflow: hidden !important;
     width: 100%; height: 100vh;
 }
 .map_wrapper .map {
     width: 100vw;
     height: 100%;
     position: relative;
-    overflow: hidden;
 }
 
 .radius_border{
@@ -63,11 +62,11 @@ button, input, label, select, textarea {
     border-bottom: 1px solid #ddd;
 }
 .btn_search {
-    /*background-image : url();*/
+    /*background : url('https://www.codingfactory.net/wp-content/uploads/button_search.png') no-repeat;*/
     overflow: hidden;
     display: inline-block;
     width: 25px;
-    height: 24px;
+    height: 25px;
     font-size: 0;
     color: transparent;
     vertical-align: top;
@@ -75,7 +74,7 @@ button, input, label, select, textarea {
     flex-shrink: 0;
     margin-right: 7px;
 }
-
+.btn_search img { margin: 0 auto; width: 100%; height: 100%; }
 .input_box{ display: inline-block; width:100%; }
 .input_search{
     position: relative;
