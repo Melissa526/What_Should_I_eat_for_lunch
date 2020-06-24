@@ -22,7 +22,7 @@ class AppHeader extends Component {
    render() {
        return(
            <div className="topnav">
-               <Link to="/" className="active">오점뭐?</Link>
+               <Link to="/" className="active">오늘점심뭐먹지🙄?</Link>
                <div id="myLinks">
                    <Link to="/menu">메뉴선택</Link>
                    <Link to="/map">주변탐색</Link>

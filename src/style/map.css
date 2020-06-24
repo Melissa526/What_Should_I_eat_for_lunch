@@ -62,7 +62,6 @@ button, input, label, select, textarea {
     border-bottom: 1px solid #ddd;
 }
 .btn_search {
-    /*background : url('https://www.codingfactory.net/wp-content/uploads/button_search.png') no-repeat;*/
     overflow: hidden;
     display: inline-block;
     width: 25px;
