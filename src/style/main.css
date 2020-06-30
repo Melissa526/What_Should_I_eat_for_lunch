@@ -1,25 +1,70 @@
-.App{
-
+#root{
+    overflow: hidden;
 }
-
 /*****************
       Home.js
 *****************/
-.wrapper .box_wrapper{
-    height: 100vh;
+.wrapper{
+    height: 95vh;
+    width: 100%;
 }
-.wrapper .box_wrapper:first-child{background-color: rgba(0, 0, 0, 0.1);}
+
+.wrapper .box_wrapper{
+    height: 100%;
+    width: auto;
+}
+
+.wrapper .home_banner{
+    background-color: #2ac1bc;
+    color: #fff; /*#333333*/;
+    font-size: x-large;
+}
 
 .wrapper .box_wrapper .box_item{
     display: inline-block;
-    height: 100%;
     width: 20%;
+    height: 100%;
+    background-repeat : no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.wrapper .box_wrapper .box_item:hover{ cursor: pointer; }
+.wrapper .box_wrapper .box_item .darkness {
+    position: absolute;
+    background: #000;
+    width: auto;
+    height: inherit;
+    opacity: 0;
+}
+.wrapper .box_wrapper .box_item:hover .darkness{ opacity: 0.5; }
+.wrapper .box_wrapper .box_item .select_btn{
+    position: relative;
+    top: 47%;
+    left: 0;
+    margin : 0 auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2ac1bc;
+    color : #fff;
+    text-align: center ;
+    opacity:0;
+    transform:scale(2);
+    transition:all .3s linear;
+}
+.wrapper .box_wrapper .box_item:hover .select_btn {
+    opacity:1;
+    transform:scale(1);
 }
 
-
+.select_btn span {
+    font-size:2.3em;
+    color:#ffffff;
+    user-select:none;
+}
 
 /*****************
-      AppHeader.js
+   AppHeader.js
 *****************/
 .mobile-container {
     max-width: 480px;

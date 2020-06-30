@@ -6,9 +6,7 @@ class SearchBox extends Component{
         super(props);
     }
 
-
     render() {
-
 
         return (
             <div className="map_search_wrapper">
@@ -35,7 +33,7 @@ class SearchBox extends Component{
                                                     category = {data.category_name}
                                                     key={i} />
                                                     );
-                        })
+                            })
                         }
                     </ul>
                 </div>

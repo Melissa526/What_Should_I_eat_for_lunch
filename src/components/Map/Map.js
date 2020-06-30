@@ -6,32 +6,11 @@ import SearchBox from './SearchBox';
 import MapControl from './MapControl';
 
 /**
- * 기능
- - 상호명/주소로 검색
- - 상세정보 핀 조회
- - 길 찾기
- - 지도 공유하기
- * kakao api key
- *  - REST API : e006030e593351829abe445c51d6a272
- *  - Javascript : 34b5b027cd5adc029f043051ec0c4c58
- *  - Admin : 8e2728c492a17ef70d758b827b79c6b0
- * *
  * 최초작성일 : 2020.06.19
  * @author D'diue
  *
  */
 class Map extends Component {
-
-    // constructor(props){
-    //     super(props);
-    //     this.state = {
-    //         map : null,
-    //         lat : null,
-    //         lng : null,
-    //         searchResult : [],
-    //         markers : []
-    //     }
-    // }
 
     state = {
         map: null,
@@ -233,6 +212,7 @@ class Map extends Component {
             map.setLevel(map.getLevel() + 1);
         });
     }
+
 
     render() {
         return (
