@@ -174,9 +174,10 @@ class Map extends Component {
         //Step1. 맵 초기화
         //TODO 마커 제거
         var {markers} = this.state;
-        for(let i=0 ; i<markers.length ; i++){
-            console.log(markers[i]);
-            markers[i].setMap(null);
+
+        for(let marker in markers){
+            console.log(marker);
+            marker.setMap(null);
         }
         this.setState({
             markers : []
