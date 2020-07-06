@@ -1,12 +1,11 @@
-#root{
-    overflow: hidden;
-}
+
 /*****************
       Home.js
 *****************/
 .wrapper{
     height: 100vh;
-    width: 100%;
+    width: 75%;
+    margin : 0 auto;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -15,7 +14,6 @@
     height: 50vh;
     width: auto;
 }
-.wrapper .box_wrapper .box_result{ width: 50%; height:100%; display: inline-block;}
 
 .wrapper .home_banner{
     background-color: #2ac1bc;
@@ -60,6 +58,15 @@
     opacity:1;
     transform:scale(1);
 }
+
+/* 2단계 메뉴 선택 영역 */
+.wrapper .box_wrapper .item_detail{ width: 50%; height: 50%; display: inline-block; }
+
+/* 메뉴선택 결과 영역 */
+/* 리포팅 영역 */
+.wrapper .box_wrapper .box_col2{ width: 50%; height:100%; display: inline-block; }
+.box_result { background-color: cornflowerblue; }
+.report_row{}
 
 .select_btn span {
     font-size:2.3em;
