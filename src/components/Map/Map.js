@@ -18,7 +18,7 @@ class Map extends Component {
         lng: null,
         searchResult: [],
         markers: []
-    }
+    };
 
     componentDidMount() {
         const container = document.getElementById('map'),
