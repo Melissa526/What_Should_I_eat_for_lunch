@@ -12,17 +12,37 @@ class Home extends Component{
 
         this.state = {
             isMenuSelected : false,
-            fstDepthMenu : null,
-            secDepthMenu : null
+            fstDepMenu : null,
+            secDepMenu : null,
+            selected : []
         };
     }
 
     //메뉴분류 클릭핸들러
     menuClassClickHandler = (type) => {
+        let menuList = [];
+        switch (fstDepMenu) {
+            case "korean" :
+                menuList = {"탕/찌개", "면/국수", "육류", "튀김"};
+                break;
+            case "chinese" :
+                menuList = {"짜장면/짬뽕", "마라탕/샹궈", "훠궈", "만두"};
+                break;
+            case "japaneses" : {};
+                break;
+            case "western":
+                break;
+            case "bunsik":
+                break;
+            default:
+                return;
+        }
+
         this.setState(state => ({
             isMenuSelected : true,
-            fstDepthMenu : type
+            fstDepMenu : type
        }));
+
 
     }
 
@@ -37,7 +57,6 @@ class Home extends Component{
 
         if(this.state.secDepthMenu != null){
             /* init kakao map */
-
         }
 
 
@@ -52,6 +71,8 @@ class Home extends Component{
                 {/* title[s] */}
                 <div className="box_wrapper">
                     오늘점심뭐먹지🙄?
+                    당신의 결정장애의 선택을 도와드립니다!
+                    오늘 땡기지 않는 음식을 선택을 해제해주세요!
                 </div>
                 {/* title[e] */}
 
@@ -59,31 +80,31 @@ class Home extends Component{
                 {/* 메뉴분류(depth1) 선택 [s] */}
                 <div className="box_wrapper" id="menu_class">
                     {/* 한식 */}
-                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('korean')}>Korean
+                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('soup')}>soup
                         <div className="darkness"></div>
                         <div className="select_btn"><span draggable="false">🍱</span></div>
                     </div>
 
                     {/* 중식 */}
-                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('chinese')}>Chinese
+                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('noodle')}>noodle
                         <div className="darkness"></div>
                         <div className="select_btn"><span draggable="false">🍜</span></div>
                     </div>
 
                     {/* 일식 */}
-                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('japaneses')}>Japaneses
+                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('rice')}>rice
                         <div className="darkness"></div>
                         <div className="select_btn"><span draggable="false">🍣</span></div>
                     </div>
 
                     {/* 양식 */}
-                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('western')}>Western
+                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('meat')}>meat
                         <div className="darkness"></div>
                         <div className="select_btn"><span draggable="false">🍔</span></div>
                     </div>
 
                     {/* 분식 */}
-                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('bunsik')}>Bunsik
+                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('fastFood')}>
                         <div className="darkness"></div>
                         <div className="select_btn"><span draggable="false">🍤</span></div>
                     </div>
@@ -94,7 +115,7 @@ class Home extends Component{
                 {/* 메뉴상세(depth2) 선택 [s] */}
                 { this.state.isMenuSelected?
                 <div className="box_wrapper" id="menu_detail" >
-                    {this.state.fstDepthMenu}<br/>
+                    {this.state.fstDepMenu}<br/>
                     <div className="item_detail" onClick={(e)=> this.menuDetailClickHandler('1')}>[1]</div>
                     <div className="item_detail" onClick={(e)=> this.menuDetailClickHandler('2')}>[2]</div>
                     <div className="item_detail" onClick={(e)=> this.menuDetailClickHandler('3')}>[3]</div>
