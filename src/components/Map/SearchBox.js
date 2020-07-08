@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import SearchItemInfo from './SearchItemInfo';
-
 class SearchBox extends Component{
     constructor(props){
         super(props);
@@ -22,19 +20,7 @@ class SearchBox extends Component{
 
                 <div className="search_result">                       {/* 검색결과 목록 */}
                     <ul className="search_list" id="search_list">
-                        {
-                            this.props.data.map((data, i)=>{
-                                return (
-                                    <SearchItemInfo name = {data.place_name}
-                                                    jibunAddr = {data.address_name}
-                                                    roadAddr = {data.road_address_name}
-                                                    phone = {data.phone}
-                                                    url = {data.place_url}
-                                                    category = {data.category_name}
-                                                    key={i} />
-                                                    );
-                            })
-                        }
+                        <li>tt</li>
                     </ul>
                 </div>
 

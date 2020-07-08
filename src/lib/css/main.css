@@ -1,0 +1,141 @@
+
+/*****************
+      Home.js
+*****************/
+.wrapper{
+    height: 100vh;
+    width: 75%;
+    margin : 0 auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.wrapper .box_wrapper{
+    height: 50vh;
+    width: auto;
+}
+
+.wrapper .home_banner{
+    background-color: #2ac1bc;
+    color: #fff; /*#333333*/;
+    font-size: x-large;
+}
+
+.wrapper .box_wrapper .box_item{
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    background-color: #bfbfbf;
+    background-repeat : no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.wrapper .box_wrapper .box_item:hover{ cursor: pointer; }
+.wrapper .box_wrapper .box_item .darkness {
+    position: absolute;
+    background: #000;
+    width: auto;
+    height: inherit;
+    opacity: 0;
+}
+.wrapper .box_wrapper .box_item:hover .darkness{ opacity: 0.5; }
+.wrapper .box_wrapper .box_item .select_btn{
+    position: relative;
+    top: 47%;
+    left: 0;
+    margin : 0 auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2ac1bc;
+    color : #fff;
+    text-align: center ;
+    opacity:0;
+    transform:scale(2);
+    transition:all .3s linear;
+}
+.wrapper .box_wrapper .box_item:hover .select_btn {
+    opacity:1;
+    transform:scale(1);
+}
+
+/* 2단계 메뉴 선택 영역 */
+.wrapper .box_wrapper .item_detail{ width: 50%; height: 50%; display: inline-block; }
+
+/* 메뉴선택 결과 영역 */
+/* 리포팅 영역 */
+.wrapper .box_wrapper .box_col2{ width: 50%; height:100%; display: inline-block; }
+.box_result { background-color: cornflowerblue; }
+.report_row{}
+
+.select_btn span {
+    font-size:2.3em;
+    color:#ffffff;
+    user-select:none;
+}
+
+/*****************
+   AppHeader.js
+*****************/
+.mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #555;
+    height: 500px;
+    color: white;
+    border-radius: 10px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+}
+
+.topnav #myLinks {
+    display: none;
+}
+
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    background-color: #333333;
+    padding: 10px;
+}
+
+.topnav a.icon {
+    width: 25px;
+    height: auto;
+    background: #2ac1bc;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 20px 7px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    color: white;
+    font-size: 17px !important;
+    font-weight: bolder;
+}
+
+.active:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/*****************
+     Home.js
+*****************/
+.App .window_container{
+    height: 100%;
+}

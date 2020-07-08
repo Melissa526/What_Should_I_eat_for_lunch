@@ -1,7 +1,7 @@
 /*global kakao*/
 import React, {Component} from 'react';
 
-import '../../style/map.css';
+import '../../lib/css/map.css';
 import SearchBox from './SearchBox';
 import MapControl from './MapControl';
 

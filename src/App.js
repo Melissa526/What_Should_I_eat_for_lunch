@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Route from './routes/Route';
-import './style/App.css';
+import './lib/css/App.css';
 
 const App = () => (
     <div className="App">

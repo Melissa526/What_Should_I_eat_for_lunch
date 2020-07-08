@@ -37,12 +37,21 @@ module.exports = {
                 ]
             },
             {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader"]
-            },
-            {
-                test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+                test: /\.(css|scss)$/,
+                use: /*[
+                    MiniCssExtractPlugin.loader, "css-loader"
+                ]*/
+                [
+                    require.resolve('style-loader'),
+                    {
+                        loader: require.resolve('css-loader'),
+                        options: { importLoaders : 1}
+                    },
+                    {
+                        loader : require.resolve('sass-loader'),
+                        options : { sourceMap : true }
+                    }
+                ]
             }
         ]
     },

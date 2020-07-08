@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import '../style/main.css';
+import '../lib/css/main.css';
 import FoodMenuClass from "./FoodMenu/FoodMenuClass";
 import FoodMenuDetail from "./FoodMenu/FoodMenuDetail";
 import FoodChoosen from './FoodMenu/FoodChoosen';
@@ -20,30 +20,10 @@ class Home extends Component{
 
     //메뉴분류 클릭핸들러
     menuClassClickHandler = (type) => {
-        let menuList = [];
-        switch (fstDepMenu) {
-            case "korean" :
-                menuList = {"탕/찌개", "면/국수", "육류", "튀김"};
-                break;
-            case "chinese" :
-                menuList = {"짜장면/짬뽕", "마라탕/샹궈", "훠궈", "만두"};
-                break;
-            case "japaneses" : {};
-                break;
-            case "western":
-                break;
-            case "bunsik":
-                break;
-            default:
-                return;
-        }
-
         this.setState(state => ({
             isMenuSelected : true,
             fstDepMenu : type
        }));
-
-
     }
 
     menuDetailClickHandler = (menu) => {
@@ -70,9 +50,8 @@ class Home extends Component{
 
                 {/* title[s] */}
                 <div className="box_wrapper">
-                    오늘점심뭐먹지🙄?
-                    당신의 결정장애의 선택을 도와드립니다!
-                    오늘 땡기지 않는 음식을 선택을 해제해주세요!
+                    오늘점심뭐먹지🙄?<br/>
+                    당신의 결정장애의 선택을 도와드립니다!<br/>
                 </div>
                 {/* title[e] */}
 
@@ -104,7 +83,7 @@ class Home extends Component{
                     </div>
 
                     {/* 분식 */}
-                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('fastFood')}>
+                    <div className="box_item" onClick={(e)=> this.menuClassClickHandler('fastFood')}>fastfood
                         <div className="darkness"></div>
                         <div className="select_btn"><span draggable="false">🍤</span></div>
                     </div>
