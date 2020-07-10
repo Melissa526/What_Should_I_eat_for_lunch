@@ -1150,6 +1150,10 @@ header {
   position: relative;
   z-index: 5; }
 
+.service-block{
+  cursor: pointer;
+}
+
 .service-block h3 {
   font-size: 1rem;
   text-transform: uppercase;
